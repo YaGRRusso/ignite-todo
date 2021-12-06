@@ -22,9 +22,11 @@ export function TaskList() {
   }
 
   function handleCreateNewTask() {
-    setTasks([...tasks, task])
-    setContadorId(contadorId + 1)
-    setNewTaskTitle('')
+    if (newTaskTitle !== '') {
+      setTasks([...tasks, task])
+      setContadorId(contadorId + 1)
+      setNewTaskTitle('')
+    }
   }
 
   function handleToggleTaskCompletion(id: number) {
